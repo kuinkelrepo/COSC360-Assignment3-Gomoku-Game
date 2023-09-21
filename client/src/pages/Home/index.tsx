@@ -38,6 +38,8 @@ const Home = () => {
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.response?.data?.error?.message);
+                navigate('/login')
+
       }
       console.log(error)
     }

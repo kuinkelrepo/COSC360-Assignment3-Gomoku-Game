@@ -3,18 +3,17 @@
 ## Project setup
 ## How to start backend service
 After successfully cloning the project, create a .env file and add following variable:
-sh
+```sh
 PORT=4000
-MONGODB_URL='mongodb+srv://pkuinkel:pkuinkel@gomoku-app.yb403su.mongodb.net/?retryWrites=true&w=majority'
-SECRET_KEY='secretKey'
-
+MONGODB_URL="your mongodb database connection url here'
+```
 
 After that run following commands in the terminal
-sh
+```sh
 npm install
-npm run db-seed
+npm db-seed
 npm start
-
+```
 
 The console shows : 
 Server is up and running on the port: 4000
@@ -22,11 +21,11 @@ Successfully connected to MongoDB server
 
 ## How to start web application (frontend)
 Run following commands in the terminal after cloning the project.
-sh
+```sh
 cd client
 npm install
 npm start
-
+```
 
 ## Pre-configured username and password
 Username: user

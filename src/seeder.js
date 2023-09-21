@@ -20,7 +20,22 @@ mongoose
     try {
       const deleteAll = await User.deleteMany({});
       if (deleteAll) {
-        console.log('All Users removed')
+        console.log('All Users removed');
+
+        //save your data. this is an async operation
+        //after you make sure you seeded all the products, disconnect automatically
+        users.map(async (user, index) => {
+          try {
+            const savedUser = await user.save();
+            if (savedUser) {
+              console.log('Done', savedUser)
+              mongoose.disconnect();
+            }
+          } catch (error) {
+            console.log('Err', error)
+          }
+        });
+
       }
     } catch (error) {
       console.log('Error', error)
@@ -29,23 +44,3 @@ mongoose
   .catch(err => {
     console.log(err)
   })
-
-
-
-
-//save your data. this is an async operation
-//after you make sure you seeded all the products, disconnect automatically
-users.map(async (user, index) => {
-  try {
-    const savedUser = await user.save();
-    if (savedUser) {
-      console.log('Done', savedUser)
-      mongoose.disconnect();
-    }
-  } catch (error) {
-    console.log('Err', error)
-  }
-});
-
-
-

@@ -1,0 +1,31 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c2d5d5;
+  color: #1d1d1d;
+  padding: 20px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+ul > li > a,
+ul > li > a:visited {
+  text-decoration: none;
+  color: #4b4b4b;
+  font-weight: 500;
+}
+
+ul > li > a:hover {
+  color: #002b0b;
+}
+
+.brand {
+  color: rgb(0, 13, 22) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+}
